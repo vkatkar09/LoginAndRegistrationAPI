@@ -1,0 +1,129 @@
+
+<section class="background">
+
+    <div class="container" style="border:2px solid red;">
+      <div class="row justify-content-center">
+       
+        <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+          <form [formGroup]="Register" (ngSubmit)="Save(Register.value)">
+           <div class="row">
+            <div class="col text-center">
+              <h1>Register</h1>
+            </div>
+          </div>
+         
+          <div class="row align-items-center">
+            <div class="col md-4">
+              <input type="text" class="form-control" placeholder="First Name" 
+              formControlName="FirstName"
+              [class.is-valid]="Register.controls.FirstName.valid"
+              [class.is-invalid]="!Register.controls.FirstName.valid && submitted"
+              >
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter your First Name.
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col mt-4">
+              <input type="text" class="form-control" placeholder="Last Name" 
+              formControlName="LastName"
+              [class.is-valid]="Register.controls.LastName.valid"
+              [class.is-invalid]="!Register.controls.LastName.valid && submitted"
+              >
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your Last Name.
+                </div>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col mt-4">
+              <input type="text" class="form-control" placeholder="MobileNo" 
+              formControlName="MobileNo"
+              [class.is-valid]="Register.controls.MobileNo.valid"
+              [class.is-invalid]="!Register.controls.MobileNo.valid && submitted"
+              >
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your Mobile Number.
+                </div>
+            </div>
+          </div>
+          <div class="row align-items-center mt-4">
+            <div class="col">
+              <input type="email" class="form-control" placeholder="Email" 
+              formControlName="EmailId"
+              [class.is-valid]="Register.controls.EmailId.valid"
+              [class.is-invalid]="!Register.controls.EmailId.valid && submitted"
+              >
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your Email ID.
+                </div>
+            </div>
+          </div>
+          <div class="row align-items-center mt-4">
+            <div class="col">
+              <textarea rows="4" cols="50" class="form-control" placeholder="Address" 
+              formControlName="Address"
+              [class.is-valid]="Register.controls.Address.valid"
+              [class.is-invalid]="!Register.controls.Address.valid && submitted"
+              ></textarea>
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your Address.
+                </div>
+            </div>
+          </div>
+          <div class="row align-items-center mt-4" formGroupName="UserLogin">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="UserName" 
+              formControlName="UserName"
+              [class.is-valid]="Register.controls.UserLogin.controls.UserName.valid"
+              [class.is-invalid]="!Register.controls.UserLogin.controls.UserName.valid && submitted"
+              >
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                   Please make a Username.
+                </div>
+            </div>
+            <div class="col">
+              <input type="password" class="form-control" placeholder="Password" 
+              formControlName="Password"
+              [class.is-valid]="Register.controls.UserLogin.controls.Password.valid"
+              [class.is-invalid]="!Register.controls.UserLogin.controls.Password.valid && submitted"
+              >
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please make a Password.
+                </div>
+            </div>
+          </div>
+          <div class="row justify-content-start">
+            <div class="col">
+              <button type="submit" class="btn btn-primary mt-4">Register me</button>
+            </div>
+          </div>
+        </form>
+        <br> <h6 class="alert alert-danger" *ngIf="validateError">{{validateError}}</h6>
+        </div>
+      </div>
+     </div>
+    
+  </section>
