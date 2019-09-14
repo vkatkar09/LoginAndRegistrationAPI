@@ -11,6 +11,12 @@
         <li class="nav-item active" >
           <a class="nav-link" routerLink="/registration">Registration</a>
         </li>
+        <li class="nav-item active" >
+            <a class="nav-link" (click)="Logout()" *ngIf="userName">Logout</a>
+          </li>
+          <li class="nav-item active" >
+              <a class="nav-link" *ngIf="userName">Hello, {{userName}}!</a>
+            </li>
       </ul>
     </div>
   </nav>

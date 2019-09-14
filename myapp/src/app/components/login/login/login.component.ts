@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
       if(data.UserIdentity){
       alert('Login successfull..!')
       this.router.navigateByUrl('/home');
+      //location.reload();
       console.log(data); // for getting response 
       }else{
         console.log(data.Error);

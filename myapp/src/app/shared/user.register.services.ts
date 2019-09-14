@@ -30,5 +30,10 @@ export class UserRegisterServices{
     userRegister(data:Iregistration):Observable<Iregistration>{
         return this.http.post<Iregistration>(this.registerEndPoint, JSON.stringify(data), {headers : this.header})
     }
+
+    userLogout(){
+        localStorage.removeItem('currentUser');
+        location.reload();
+    }
     
 }
