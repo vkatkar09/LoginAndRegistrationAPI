@@ -4,6 +4,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import {RouterModule} from '@angular/router';
 import { registration } from './registration.routes';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -11,7 +12,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule.forChild(registration),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
   ]
 })
 export class RegistrationModule { }

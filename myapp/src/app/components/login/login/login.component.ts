@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import {FormBuilder,FormGroup,Validators, FormControl} from '@angular/forms';
 import {Ilogin} from '../../../shared/model/userLogin';
 import { UserRegisterServices } from '../../../shared/user.register.services';
 import { Router } from '@angular/router';
@@ -14,18 +14,21 @@ export class LoginComponent implements OnInit {
   public submitted:boolean = false;
   public validateError:string;
 
-  constructor(private fb: FormBuilder, private userServices : UserRegisterServices, private router : Router) { }
+  constructor(private fb: FormBuilder, private userServices : UserRegisterServices, 
+    private router : Router) { }
+   
 
   ngOnInit() {
     this.Login = this.fb.group({
       'UserLogin': this.fb.group({
-        UserName:['', [Validators.required]],
+        UserName:['', [Validators.required, Validators.minLength(5)]],
         Password:['',[Validators.required]]
       })
     })
   }
 
   Save(data: Ilogin){
+
     this.submitted = true;
     if(!this.Login.valid)
     {return;}

@@ -15,7 +15,7 @@
             <a class="nav-link" (click)="Logout()" *ngIf="userName">Logout</a>
           </li>
           <li class="nav-item active" >
-              <a class="nav-link" *ngIf="userName">Hello, {{userName}}!</a>
+              <a class="nav-link" *ngIf="userName">Hello, {{userName.FirstName}} {{userName.LastName}}!</a> 
             </li>
       </ul>
     </div>

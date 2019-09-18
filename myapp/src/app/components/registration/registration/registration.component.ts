@@ -42,6 +42,7 @@ export class RegistrationComponent implements OnInit {
       if(data.Error){
         console.log(data.Error);
         this.validateError = data.Error;
+        
       }else{
         this.router.navigateByUrl('/login');
         console.log(data);

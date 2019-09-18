@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import {RouterModule} from '@angular/router';
 import { login } from './login.routes';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 
 
 
@@ -13,6 +14,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RouterModule.forChild(login),
     ReactiveFormsModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+  
     
   ]
 })

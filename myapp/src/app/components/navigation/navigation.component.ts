@@ -10,13 +10,17 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
 
   public userName;
+  user:any = JSON.parse(localStorage.getItem('currentUser'));
   constructor(private userServices : UserRegisterServices, private router : Router) { }
 
   ngOnInit() {
-    let user:any = JSON.parse(localStorage.getItem('currentUser'));
-    console.log(user);
-    this.userName = user.FirstName +" "+ user.LastName;
-    
+
+    this.userServices.currentuser.subscribe(x  => {
+      this.userName = x;
+    })
+ 
+    // console.log(user);
+    // this.userName = user;
   }
 
   Logout(){
